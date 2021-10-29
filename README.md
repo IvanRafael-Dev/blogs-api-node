@@ -22,7 +22,30 @@ Por fim a tabela de Posts foi o maior foco, guardando todas as informações dos
 Foi desenvolvida uma aplicação em `Node.js` usando o pacote `sequelize` para fazer um `CRUD` de posts.
 
 Para fazer um post é necessário usuário e login, portanto foi trabalhada a **relação entre** `user` e `post`. Também foi necessário a utilização de categorias para os posts, assim trabalhando a relação de `posts` para `categorias` e de `categorias` para `posts`.
- 
+
+### Executando o Projeto
+
+1. Faça o clone do repositório
+```
+- git clone git@github.com:IvanRafael-Dev/blogs-api-node.git
+```
+
+2. Instale as dependências do projeto
+```
+- `npm install`
+```
+
+3. O projeto utiliza o MySQL como banco de dados. Certifique-se de estar com o serviço do MySQL rodando em sua máquina
+
+```
+- sudo systemctl start mysql.service
+```
+
+4. Inicie a aplicação 
+```
+- npm start
+```
+
 
 ### Execução de testes unitários
 
@@ -30,16 +53,6 @@ Utilize o Jest para executar os testes, use o comando a seguir para executar tod
 
 ```sh
 npm test
-```
-
-Caso queria executar só um arquivo de test use o seguinte comando, considerado que quer testar o arquivo `tests/req07-createPost.test.js`:
-
-```sh
-npm test tests/req07-createPost.test.js
-```
-ou
-```
-npm test req07
 ```
 
 ## Lista de Funcionalidades:
@@ -137,7 +150,7 @@ Se o usuário cadastrar o campo "email" com um email que já existe, o resultado
   ```
 
 
-**Não é possível fazer login sem o campo `email`]**
+**[Não é possível fazer login sem o campo `email`]**
 
 Se o login não tiver o campo "email" o resultado retornado deverá ser conforme exibido abaixo, com um status http `400`:
 
@@ -200,7 +213,7 @@ Se o token for inválido o resultado retornado deverá ser conforme exibido abai
 
 ![Token inválido](./public/tokeninvalido.png)
 
-### 4 - Sua aplicação deve ter o endpoint
+### 4 - Encontrar um usuário
 
 - **GET** `/user/:id`
 
